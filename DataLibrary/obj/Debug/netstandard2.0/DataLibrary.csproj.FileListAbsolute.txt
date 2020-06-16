@@ -1,0 +1,14 @@
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.deps.json
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csprojAssemblyReference.cache
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfoInputs.cache
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfo.cs
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\bin\Debug\netstandard2.0\System.Configuration.xml
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\bin\Debug\netstandard2.0\System.Security.xml
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.CopyComplete

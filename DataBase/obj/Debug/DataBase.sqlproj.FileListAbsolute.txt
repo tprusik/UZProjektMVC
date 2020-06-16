@@ -1,0 +1,6 @@
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataBase\bin\Debug\DataBase.dacpac
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataBase\bin\Debug\DataBase.dll
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataBase\bin\Debug\DataBase.pdb
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataBase\obj\Debug\DataBase.sqlprojAssemblyReference.cache
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataBase\obj\Debug\DataBase.dll
+C:\Users\Tomasz\source\repos\UZProjektMVC\DataBase\obj\Debug\DataBase.pdb
