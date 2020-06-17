@@ -398,6 +398,16 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
+      },
       "DataLibrary/1.0.0": {
         "type": "project",
         "compile": {
@@ -2015,6 +2025,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
+    },
     "DataLibrary/1.0.0": {
       "type": "project",
       "path": "../DataLibraryOne/DataLibrary.csproj",
@@ -2023,6 +2038,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Core >= 1.0.0",
       "DataLibrary >= 1.0.0",
       "EntityFramework >= 6.4.4",
       "NETStandard.Library >= 2.0.3",
@@ -2060,6 +2076,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\Core\\Core.csproj"
+            },
             "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\DataLibraryOne\\DataLibrary.csproj": {
               "projectPath": "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\DataLibraryOne\\DataLibrary.csproj"
             }

@@ -1,33 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Core.Domain
 {
-    public class Person
+    public class Person 
     {
-        public Person(string _name, string _sourname, int _telephoneNumber)
+        public Person(string _name, string _sourname, int _telephoneNumber,string _userID)
         {
             Name = _name;
             Sourname = _sourname;
             TelephoneNumber = _telephoneNumber;
-            guid = Guid.NewGuid();
+            PersonID = Guid.NewGuid().ToString();
+            UserID = _userID;
         }
 
-        [Required]//wymagane pole
-        [MinLength(2, ErrorMessage = "Imie nie składa się z dwóch liter")]
-        [MaxLength(20, ErrorMessage = "Imie nie moze być dłuższe niż 20 liter")]
-        [Display(Name = "Imię")]
-        // [RegularExpression("")] dodaj regex
         public string Name { get; set; }
 
-        [Display(Name = "Nazwisko")]
         public string Sourname { get; set; }
 
-        [Display(Name = "Numer Telefonu")]  // nazwa wyswietlana 
         public int TelephoneNumber { get; set; }
-        public Guid guid;
+
+        public string PersonID;
+
+        public string UserID;
 
     }
 }

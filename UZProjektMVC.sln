@@ -8,8 +8,13 @@ EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DataBase", "DataBase\DataBase.sqlproj", "{65A65450-086B-4368-9F02-2B5375A0470B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E701151E-FF3C-45E5-A467-97DAF02F358A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3DD77814-AE3E-4E99-9C1F-811E04D826BB} = {3DD77814-AE3E-4E99-9C1F-811E04D826BB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibraryOne\DataLibrary.csproj", "{EF679587-986C-46F0-A0C6-B1AB9D95BA86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{3DD77814-AE3E-4E99-9C1F-811E04D826BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +40,10 @@ Global
 		{EF679587-986C-46F0-A0C6-B1AB9D95BA86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF679587-986C-46F0-A0C6-B1AB9D95BA86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF679587-986C-46F0-A0C6-B1AB9D95BA86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD77814-AE3E-4E99-9C1F-811E04D826BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD77814-AE3E-4E99-9C1F-811E04D826BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD77814-AE3E-4E99-9C1F-811E04D826BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD77814-AE3E-4E99-9C1F-811E04D826BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -129,3 +129,5 @@ C:\Users\Tomasz\source\repos\UZProjektMVC\Api\bin\DataLibraryOne.dll.config
 C:\Users\Tomasz\source\repos\UZProjektMVC\Api\bin\Dapper.dll
 C:\Users\Tomasz\source\repos\UZProjektMVC\Api\bin\Dapper.xml
 C:\Users\Tomasz\source\repos\UZProjektMVC\Api\bin\Dapper.pdb
+C:\Users\Tomasz\source\repos\UZProjektMVC\Api\bin\Core.dll
+C:\Users\Tomasz\source\repos\UZProjektMVC\Api\bin\Core.pdb

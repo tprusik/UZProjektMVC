@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Text;
 using Infrastructure.DTO;
 using Infrastructure.Commands;
-using Infrastructure.Domain;
 using System.Data;
 using System.Runtime.CompilerServices;
+
+using Infrastructure.Domain;
+using Core.Domain;
 
 namespace Infrastructure.Services
 {
