@@ -6,38 +6,44 @@ using Infrastructure.DTO;
 using Infrastructure.Commands;
 using System.Data;
 using System.Runtime.CompilerServices;
-
-using Infrastructure.Domain;
 using Core.Domain;
+using Infrastructure.Mapper;
 
 namespace Infrastructure.Services
 {
-  public static  class PersonService
-    { 
+  public class PersonService
+    {
 
-        public static void Create(CreatePersonCommand createPerson, string userID)
+       private readonly PersonRepository personRepository;
+        private readonly AddressRepository addressRepository;
+
+        public PersonService()
         {
+            personRepository = new PersonRepository();
+            addressRepository = new AddressRepository();
+        }
 
+        public PersonService(PersonRepository _personRepository,AddressRepository _addressRepository)
+        {
+            personRepository = _personRepository;
+            addressRepository = _addressRepository;
+        }
+
+        public  void Create(CreatePersonCommand createPerson, string userID)
+        {
             var person = new Person(
                 createPerson.Name, createPerson.Sourname, createPerson.TelephoneNumber, userID);
             // tu mapper
 
-            PersonDTO persondto = new PersonDTO()
-            {
-                Name = person.Name,
-                Sourname = person.Sourname,
-                TelephoneNumber = person.TelephoneNumber,
-                PersonID = person.PersonID,
-                UserID = userID
+            var imapper = AutoMapperConfig.GetMapper(); // mapuje obiekt domenowy na płaski obiekt
+            var dest = imapper.Map<Person, PersonDTO>(person);
 
-            };
-
-            PersonRepository.Create(persondto);
+            personRepository.Create(dest);
         }
 
-        public static List<PersonDTO> LoadAll()
+        public  List<PersonDTO> LoadAll()
         {
-            var data = PersonRepository.ReadAll ();
+            var data = personRepository.ReadAll ();
             List<PersonDTO> personDtoList = new List<PersonDTO>();
 
             foreach (var row in data)
@@ -54,55 +60,44 @@ namespace Infrastructure.Services
             return personDtoList;
         }
 
-        public static PersonDTO Load(string userID)
+        public  PersonDTO Load(string userID)
         {
-            var person = PersonRepository.ReadOne(userID);
+            var person = personRepository.ReadOne(userID);
           
-
             return person;
         }
-       
-        public static int UpdatePerson(string userID)
+
+        public  int UpdatePerson(CreatePersonCommand createPerson,string userID)
         {
-            var person = PersonRepository.ReadOne(userID);
+            var personDTO = personRepository.ReadOne(userID);
+            var person = new Person(personDTO.Name, personDTO.Sourname,
+                personDTO.TelephoneNumber, personDTO.PersonID, personDTO.UserID);
 
-            PersonDTO personDTO = new PersonDTO()
-            {
-                Name = person.Name,
-                Sourname = person.Sourname,
-                TelephoneNumber = person.TelephoneNumber,
-                PersonID = person.PersonID,
-                UserID = person.UserID
-            };
+            var imapper = AutoMapperConfig.GetMapper(); // mapuje obiekt domenowy na płaski obiekt
+            var personDTO1 = imapper.Map<Person, PersonDTO>(person);
 
-           return PersonRepository.Update(personDTO);
+
+            return personRepository.Update(personDTO1);
         }
 
-        public static int DeletePerson(string userID)
+        public int DeletePerson(string userID)
         {
-           return PersonRepository.Delete(userID);
+           return personRepository.Delete(userID);
         }
 
-        public static void CompleteAddress(CreateAddressCommand createAddress, string personID) {
+        public  void CompleteAddress(CreateAddressCommand createAddress, string personID) {
 
             var address = new Address(createAddress.City, createAddress.ZipCode, createAddress.StreetName, personID, createAddress.StreetNumber, createAddress.HomeNumber);
 
-            var addressDTO = new AddressDTO
-            {
-                City = address.City,
-                ZipCode = address.ZipCode,
-                StreetName = address.StreetName,
-                PersonID = address.PersonID,
-                StreetNumber = address.StreetNumber,
-                HomeNumber = address.HomeNumber
-            };
+            var imapper = AutoMapperConfig.GetMapper(); // mapuje obiekt domenowy na płaski obiekt
+            var addressDTO = imapper.Map<Address, AddressDTO>(address);
 
-            AddressRepository.Create(addressDTO);
+            addressRepository.Create(addressDTO);
         }
 
-        public static AddressDTO LoadAddress(string personID)
+        public  AddressDTO LoadAddress(string personID)
         {
-            var address = AddressRepository.LoadOne(personID);
+            var address = addressRepository.LoadOne(personID);
             return address;
         }
     }

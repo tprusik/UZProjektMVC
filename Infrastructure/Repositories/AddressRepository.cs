@@ -1,4 +1,5 @@
-﻿using DataLibraryOne.DataAccess;
+﻿
+using Infrastructure.DataAccess;
 using Infrastructure.DTO;
 using System;
 using System.Collections.Generic;
@@ -6,9 +7,9 @@ using System.Text;
 
 namespace Infrastructure.Repositories
 {
-    public static class AddressRepository
+    public  class AddressRepository
     {
-        public static void Create(AddressDTO addressDTO)
+        public  void Create(AddressDTO addressDTO)
         {
             //parametry przekazywane do zapytania sql , pobierane z personDTO, nie działa przekazanie bezpośrednio
             var parameters = new
@@ -29,15 +30,14 @@ namespace Infrastructure.Repositories
             SqlDataAccess.SaveData(sql, parameters); ;
         }
 
-        public static AddressDTO LoadOne(string _personID)
+        public  AddressDTO LoadOne(string _personID)
         {
             var parameter = new { personID = _personID };
 
-            /// string sql = @"select * from dbo.[Address] where personID like @personID;";
+             string sql = @"select * from dbo.[Address] where personID like @personID;";
 
-            // var data = SqlDataAccess.LoadData<AddressDTO>(sql, parameter);
-            // return data;
-            return null;
+             var data = SqlDataAccess.LoadData<AddressDTO>(sql, parameter);
+             return data;
         }
     }
 }

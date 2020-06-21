@@ -7,17 +7,19 @@ namespace Infrastructure.Commands
 {
    public class CreatePersonCommand
     {
-        [Required]
-        [MinLength(2, ErrorMessage = "Imie nie składa się z dwóch liter")]
+    
+        [MinLength(2, ErrorMessage = "Imie musi być dłuższe niż dwie litery.")]
         [MaxLength(20, ErrorMessage = "Imie nie moze być dłuższe niż 20 liter")]
         [Display(Name = "Imię")]
-        // [RegularExpression("")] dodać regex
-        public string Name { get; set; }
+        [RegularExpression("^([a-zA-Z]{2,20})", ErrorMessage = "Niepoprawny format - imie składa się tylko z liter")]
+        public string Name { get;  set; }
 
         [MaxLength(20, ErrorMessage = "Nazwisko nie moze być dłuższe niż 20 liter")]
+        [RegularExpression("^([a-zA-Z]{2,20})", ErrorMessage = "Niepoprawny format - nazwisko składa się tylko z liter")]
         [Display(Name = "Nazwisko")]
-        public string Sourname { get; set; }
+        public string Sourname { get;  set; }
 
+        [RegularExpression(@"^(\d{9})$", ErrorMessage = "Numer telefonu składa się z 9 cyfr.")]
         [Display(Name = "Numer Telefonu")]
         public int TelephoneNumber { get; set; }
     }

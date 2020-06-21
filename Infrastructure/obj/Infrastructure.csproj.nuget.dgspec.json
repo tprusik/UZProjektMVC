@@ -62,16 +62,6 @@
         }
       }
     },
-    "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\DataLibraryOne\\DataLibrary.csproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\DataLibraryOne\\DataLibrary.csproj",
-        "projectName": "DataLibrary",
-        "projectPath": "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\DataLibraryOne\\DataLibrary.csproj"
-      },
-      "frameworks": {
-        "net472": {}
-      }
-    },
     "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -100,9 +90,6 @@
             "projectReferences": {
               "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\Core\\Core.csproj": {
                 "projectPath": "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\Core\\Core.csproj"
-              },
-              "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\DataLibraryOne\\DataLibrary.csproj": {
-                "projectPath": "C:\\Users\\Tomasz\\source\\repos\\UZProjektMVC\\DataLibraryOne\\DataLibrary.csproj"
               }
             }
           }
@@ -116,6 +103,14 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.35, )"
+            },
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
@@ -125,6 +120,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             },
             "System.Data.Common": {
               "target": "Package",

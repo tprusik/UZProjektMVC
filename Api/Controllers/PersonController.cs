@@ -17,11 +17,19 @@ namespace Api.Controllers
     
     public class PersonController : Controller
     {
+
+        private readonly PersonService personService;
+
+        public PersonController()
+        {
+            personService = new PersonService();
+        }
+
         [HttpGet]
         public ActionResult CompleteAddress(CreateAddressCommand createAddress)
         {
-            var personDTO = PersonService.Load(User.Identity.GetUserId());
-            var addressDTO = PersonService.LoadAddress(personDTO.PersonID); 
+            var personDTO = personService.Load(User.Identity.GetUserId());
+            var addressDTO = personService.LoadAddress(personDTO.PersonID); 
 
             if(addressDTO!=null)
             {
@@ -31,7 +39,7 @@ namespace Api.Controllers
             if (addressDTO == null && ModelState.IsValid)
             {
 
-                PersonService.CompleteAddress(createAddress, personDTO.PersonID);
+                personService.CompleteAddress(createAddress, personDTO.PersonID);
                 return RedirectToAction("Index", "Home");
             }
 
@@ -40,14 +48,14 @@ namespace Api.Controllers
 
         public ActionResult DeletePerson()
         {
-            PersonRepository.Delete(User.Identity.GetUserId());
+            personService.DeletePerson(User.Identity.GetUserId());
 
             return View();
         }
 
         public ActionResult CreatePerson(CreatePersonCommand createPerson)
         {
-            var person = PersonService.Load(User.Identity.GetUserId());
+            var person = personService.Load(User.Identity.GetUserId());
 
             if (person != null)
             {
@@ -57,7 +65,7 @@ namespace Api.Controllers
 
             if (person == null && ModelState.IsValid) 
             {
-               PersonService.Create(createPerson, User.Identity.GetUserId());
+               personService.Create(createPerson, User.Identity.GetUserId());
                return RedirectToAction("Index", "Home");
             }
             
@@ -70,7 +78,7 @@ namespace Api.Controllers
         public ActionResult ViewPerson()
         {
             ViewBag.Message = "ViewPerson";
-            var person = PersonService.Load(User.Identity.GetUserId());
+            var person = personService.Load(User.Identity.GetUserId());
             return View(person);
         }
 
@@ -79,7 +87,7 @@ namespace Api.Controllers
         {
             ViewBag.Message = "All Persons";
 
-            var personList = PersonService.LoadAll();
+            var personList = personService.LoadAll();
 
             return View(personList);
         }

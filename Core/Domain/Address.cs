@@ -16,6 +16,27 @@ namespace Core.Domain
             PersonID = _personID; 
         }
 
+        private void SetZipCode(string _zipCode)
+        {
+            ZipCode = _zipCode;
+        }
+        private void SetCity(string _city)
+        {
+            City = _city;
+        }
+        private void SetStreetName(string _streetName)
+        {
+            StreetName = _streetName;
+        }
+        private void SetStreetNumber(int _streetNumber)
+        {
+            StreetNumber = _streetNumber;
+        }
+        private void SetHomeNumber(int _homeNumber)
+        {
+            HomeNumber = _homeNumber;
+        }
+
         public string ZipCode { get; protected set; }
         public string City { get; protected set; }
         public string StreetName { get; protected set; }
